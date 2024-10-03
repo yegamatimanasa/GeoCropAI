@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRS - Crop Recommendation Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f8fa;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background-color: #ffffff;
+        }
+        .card-title {
+            color: #1da1f2;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .list-group-item {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 15px 0;
+        }
+        .list-group-item strong {
+            flex: 1;
+            font-size: 1rem;
+            color: #333;
+        }
+        .list-group-item span {
+            flex: 2;
+            text-align: right;
+            font-weight: bold;
+        }
+        .crop-image-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .crop-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+        .weather-icons {
+            margin-right: 10px;
+            width: 32px;
+            height: 32px;
+        }
+        .btn-primary {
+            background-color: #1da1f2;
+            border-color: #1da1f2;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+        }
+        .btn-secondary {
+            background-color: #2c3e50;
+            border-color: #2c3e50;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            margin-left: 10px;
+        }
+        .card-footer {
+            background-color: #ffffff;
+            border-top: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body text-center">
+                <h3 class="card-title">Recommended Crop: {{ crop }}</h3>
+                
+                <!-- Crop Image Display -->
+                <div class="crop-image-container">
+                    {% if crop_image_url %}
+                        <img src="{{ crop_image_url }}" alt="{{ crop }}" class="crop-image" style="display: block;">
+                    {% endif %}
+                </div>
+
+                <!-- Weather, Soil, and Location Details -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Temperature:</strong> <span>{{ temperature }}°C</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Humidity:</strong> <span>{{ humidity }}%</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Rainfall:</strong> <span>{{ rainfall }} mm</span>
+                    </li>
+
+                    <li class="list-group-item">
+                        <strong>pH:</strong> <span>{{ soil_data['pH'] }}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Clay Content:</strong> <span>{{ soil_data['Clay_Content'] }}%</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Sand Content:</strong> <span>{{ soil_data['Sand_Content'] }}%</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Silt Content:</strong> <span>{{ soil_data['Silt_Content']  }}%</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>CEC:</strong> <span>{{ soil_data['CEC']  }} cmol/kg</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Latitude:</strong> <span>{{ latitude }}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Longitude:</strong> <span>{{ longitude }}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="/" class="btn btn-primary">Go Back</a>
+                <button class="btn btn-secondary" onclick="downloadReport()">Download Report</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function downloadReport() {
+            alert('This feature is under development.');
+        }
+    </script>
+</body>
+</html>

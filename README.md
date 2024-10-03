@@ -50,11 +50,8 @@ Expandable framework: Designed to integrate more data sources, including real-ti
 
 Follow these steps to run GeoCropAI on your local machine:
 
-Clone the repository:
+Clone the repository: git clone https://github.com/yegamatimanasa/GeoCropAI.git
 
-bash
-Copy code
-git clone https://github.com/yegamatimanasa/GeoCropAI.git
 cd GeoCropAI
 
 **Install dependencies:**
@@ -67,14 +64,10 @@ Jinja2
 
 **You can install them using:**
 
-bash
-Copy code
 pip install Flask pandas numpy scikit-learn
-Run the Flask application:
 
-bash
-Copy code
-python app.py
+Run the Flask application: python app.py
+
 Access the application: Open your web browser and navigate to http://127.0.0.1:5000 to access the GeoCropAI system.
 
 **Usage**
@@ -90,23 +83,13 @@ Soil parameters like pH, clay, sand, and silt content.
 **Dataset**
 
 HWSD_DATA.csv: A dataset containing soil data such as pH, clay, sand, and silt content, as well as Cation Exchange Capacity (CEC). This data is used to evaluate the suitability of different crops.
+
 crop_data.csv: Contains a list of crops and related data used for making the recommendation.
 These datasets are key components of the recommendation engine, helping to match environmental and soil conditions to the optimal crops.
 
 **File Structure**
 
-bash
-Copy code
-GeoCropAI/
-│
-├── app.py                   # Main Flask application
-├── GeoAICRS.ipynb            # Jupyter notebook for data analysis and model development
-├── HWSD_DATA.csv             # Soil dataset
-├── crop_data.csv             # Crop data used for recommendations
-├── index.html                # Frontend form for user input
-├── result.html               # Frontend result page displaying recommendations
-├── static/                   # Static files such as images and CSS
-└── templates/                # HTML templates for the Flask app
+<img width="508" alt="image" src="https://github.com/user-attachments/assets/84b249f7-8908-45ee-b0f8-75f6784f7416">
 
 **Technologies Used**
 

@@ -5,16 +5,25 @@ GeoCropAI is an intelligent crop recommendation system designed to provide farme
 **Table of Contents**
 
 Project Overview
+
 Features
+
 User Interface
+
 Installation
+
 Usage
+
 Dataset
+
 File Structure
+
 Technologies Used
+
 Future Enhancements
+
 Contributors
-License
+
 
 **Project Overview**
 

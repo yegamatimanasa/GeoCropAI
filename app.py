@@ -152,7 +152,7 @@ def submit():
     latitude = float(request.form.get('latitude'))
     longitude = float(request.form.get('longitude'))
 
-    df_soil = load_dataset('HWSD_DATA.csv')
+    df_soil = load_dataset('data/HWSD_DATA.csv')
     centroids = load_centroid_mapping()
 
     soil_data = get_soil_properties(latitude, longitude, df_soil, centroids)
@@ -181,10 +181,10 @@ def submit():
                            crop=recommended_crop, soil_data=soil_data)
 
 if __name__ == '__main__':
-    df_soil = load_dataset('HWSD_DATA.csv')
+    df_soil = load_dataset('data/HWSD_DATA.csv')
     centroids = load_centroid_mapping()
 
-    df = load_dataset('crop_data.csv')
+    df = load_dataset('data/crop_data.csv')
     model = train_model(df)
     
     app.run(debug=True)
